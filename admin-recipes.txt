@@ -1,0 +1,2 @@
+
+{'name': 'Waffles and Eggs', 'cuisine': 'American', 'dietary': 'None', 'ingredients': {'ingredients': [{'name': 'Waffles', 'calorie': '300', 'carbohydrates': '20', 'fats': '30', 'proteins': '14'}, {'name': 'Eggs', 'calorie': '240', 'carbohydrates': '9', 'fats': '40', 'proteins': '28'}]}}
