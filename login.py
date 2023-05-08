@@ -14,7 +14,7 @@ def create_login_window():
     login_window.geometry('800x600')
     login_window.title("Login")
     
-    img = ImageTk.PhotoImage(Image.open("login.jpg"))  
+    img = ImageTk.PhotoImage(Image.open("images/login.jpg"))  
     l=tk.Label(image=img)
     l.place(x=0,y=0)
     
@@ -52,7 +52,7 @@ def create_login_window():
         password = password_entry.get()
 
         # check if the user has an account
-        user_file = f"{username}.txt"
+        user_file = f"user_files/{username}.txt"
         try:
             with open(user_file) as f:
                 # if the file exists, check if the password is correct
@@ -82,7 +82,7 @@ def create_login_window():
         password = password_entry.get()
 
         # create a new file for the user
-        user_file = f"{username}.txt"
+        user_file = f"user_files/{username}.txt"
         with open(user_file, "w") as f:
             f.write(password)
 

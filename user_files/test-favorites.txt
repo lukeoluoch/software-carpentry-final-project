@@ -1,4 +1,3 @@
 
 {'name': 'KFC', 'cuisine': 'American', 'dietary': 'None', 'ingredients': {'ingredients': [{'name': 'Chicken', 'calorie': '100', 'carbohydrates': '20', 'fats': '01', 'proteins': '02'}]}}
-{'name': 'Taco Bell', 'cuisine': 'Mexican', 'dietary': 'None', 'ingredients': {'ingredients': [{'name': 'Burrito', 'calorie': '2000', 'carbohydrates': '200', 'fats': '100', 'proteins': '10'}]}}
 {'name': "Domino's", 'cuisine': 'Italian', 'dietary': 'Vegetarian', 'ingredients': {'ingredients': [{'name': 'Dough', 'calorie': '500', 'carbohydrates': '50', 'fats': '13', 'proteins': '12'}, {'name': 'Mozarella Cheese', 'calorie': '300', 'carbohydrates': '50', 'fats': '60', 'proteins': '20'}, {'name': 'Tomato Sauce', 'calorie': '200', 'carbohydrates': '40', 'fats': '2', 'proteins': '0'}]}}

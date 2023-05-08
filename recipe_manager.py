@@ -8,6 +8,11 @@ import homepage
 
 
 def create_recipe_manager(current_user):
+    """creates a recipe manager tkinter frame
+
+    Args:
+        current_user (str): the user who's recipe manager is being created
+    """
 
 ## ------------------------------ Create Frame ----------------------- ##
 
@@ -18,7 +23,7 @@ def create_recipe_manager(current_user):
     main_window.title("Recipe Manager")
     main_window.geometry("800x600")
     
-    img = ImageTk.PhotoImage(Image.open("recipe.jpg"))  
+    img = ImageTk.PhotoImage(Image.open("images/recipe.jpg"))  
     l=tk.Label(image=img)
     l.place(x=0,y=0)
 
@@ -177,8 +182,10 @@ def create_recipe_manager(current_user):
     
    ###### ---------------------------- Ingredient Button Functionalities ------------------------------------# 
 
-    # create a function to add a new ingredient to the current recipe
     def add_ingredient():
+        """
+        A function to add a new ingredient to the current recipe
+        """
         # get the values from the entry widgets
         name = ingredient_name_entry.get()
         calorie = calorie_entry.get()
@@ -205,8 +212,10 @@ def create_recipe_manager(current_user):
         # update the ingredients listbox
         update_ingredients_listbox()
 
-    # create a function to edit an existing ingredient in the current recipe
     def edit_ingredient():
+        """
+        create a function to edit an existing ingredient in the current recipe
+        """
         # get the selected ingredient from the listbox
         selected_index = ingredients_listbox.curselection()
         if selected_index:
@@ -229,8 +238,10 @@ def create_recipe_manager(current_user):
             # update the ingredients listbox
             update_ingredients_listbox()
 
-    # create a function to delete an existing ingredient from the current recipe
     def delete_ingredient():
+        """
+        a function to delete an existing ingredient from the current recipe
+        """
         # get the selected ingredient from the listbox
         selected_index = ingredients_listbox.curselection()
         if selected_index:
@@ -249,8 +260,10 @@ def create_recipe_manager(current_user):
             # update the ingredients listbox
             update_ingredients_listbox()
 
-    # create a function to update the ingredients listbox
     def update_ingredients_listbox():
+        """
+        a function to update the ingredients listbox
+        """
         # clear the listbox
         ingredients_listbox.delete(0, tk.END)
         
@@ -274,16 +287,21 @@ def create_recipe_manager(current_user):
     
     # ------------------------------------- Recipe Button Functionalities -----------------------------------------------------#
     
-    # function to update the recipe listbox
     def update_recipe_listbox():
+        """
+        a function to update the recipe listbox
+        """
+        
         # clear the recipe listbox
         recipe_listbox.delete(0, tk.END)
         # add the recipes to the recipe listbox
         for recipe_name in recipes.keys():
             recipe_listbox.insert(tk.END, recipe_name)
             
-    # function to update the favorite listbox
     def update_favorite_listbox():
+        """
+        a function to update the favorite listbox
+        """
         # clear the favorite listbox
         favorites_listbox.delete(0, tk.END)
         # add the favorites to the favorite listbox
@@ -291,15 +309,16 @@ def create_recipe_manager(current_user):
             favorites_listbox.insert(tk.END, favorite_name)
 
 
-    # load exisiting recipes
     def load_existing_recipes():
-        # global current_user
+        """
+        a function that loads exisiting recipes into listbox
+        """
         global recipes
         global favorites
 
         if (current_user):
-            recipe_file = f"{current_user}-recipes.txt"
-            favorites_file = f"{current_user}-favorites.txt"
+            recipe_file = f"user_files/{current_user}-recipes.txt"
+            favorites_file = f"user_files/{current_user}-favorites.txt"
             
             recipe_arr= []
 
@@ -340,8 +359,8 @@ def create_recipe_manager(current_user):
             name (str): name of the recipe to be deleted
         """
         if (current_user):
-            recipe_file = f"{current_user}-recipes.txt"
-            favorites_file = f"{current_user}-favorites.txt"
+            recipe_file = f"user_files/{current_user}-recipes.txt"
+            favorites_file = f"user_files/{current_user}-favorites.txt"
             
             recipe_arr = []
             favorites_arr = []
@@ -384,8 +403,10 @@ def create_recipe_manager(current_user):
             
 
 
-    # function to add a recipe to the recipe dictionary
     def add_recipe():
+        """ 
+        function to add a recipe to the recipe dictionary
+        """
         # get the values from the entry widgets
         name = recipe_name_entry.get()
         cuisine = cuisine_origin_entry.get()
@@ -404,8 +425,8 @@ def create_recipe_manager(current_user):
         
         # global current_user
         
-        recipe_file = f"{current_user}-recipes.txt"
-        favorites_file = f"{current_user}-favorites.txt"
+        recipe_file = f"user_files/{current_user}-recipes.txt"
+        favorites_file = f"user_files/{current_user}-favorites.txt"
         
         with open(recipe_file, 'a') as file:
             file.write("\n"+str(recipes[name]))
@@ -427,14 +448,16 @@ def create_recipe_manager(current_user):
 
 
 
-    # function to delete a recipe from the recipe dictionary
     def delete_recipe():
+        """
+        a function to delete a recipe from the recipe dictionary
+        """
         selected_recipe = recipe_listbox.get(tk.ACTIVE)
         selected_fave = favorites_listbox.get(tk.ACTIVE)
         # global current_user
         
-        recipe_file = f"{current_user}-recipes.txt"
-        favorites_file = f"{current_user}-favorites.txt"
+        recipe_file = f"user_files/{current_user}-recipes.txt"
+        favorites_file = f"user_files/{current_user}-favorites.txt"
         
         if selected_recipe:
             recipes.pop(selected_recipe)
@@ -450,6 +473,9 @@ def create_recipe_manager(current_user):
 
 
     def search_recipes():
+        """
+        A function that searches through the recipes and filters based on the comboboxes
+        """
         cuisine_origin = cuisine_origin_combobox.get()
         dietary_restrictions = dietary_restrictions_combobox.get()
         matching_recipes = []
@@ -483,8 +509,10 @@ def create_recipe_manager(current_user):
 
     
 
-    # function to add a recipe to the favorites dictionary
     def add_to_favorites():
+        """
+        function to add a recipe to the favorites dictionary
+        """
         # get the values from the entry widgets
         name = recipe_name_entry.get()
         cuisine = cuisine_origin_entry.get()

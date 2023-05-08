@@ -51,7 +51,7 @@ def create_homepage(current_user):
     
     #---------------------------------------- User's Information Text-----------------------------------------#
 
-    info_file = f"{current_user}-information.txt"
+    info_file = f"user_files/{current_user}-information.txt"
     
     if os.path.isfile(info_file) == False:
         with open(info_file, 'a') as file:
@@ -183,7 +183,7 @@ def create_homepage(current_user):
         favorites = {}
 
         
-        recipe_file = f"{current_user}-recipes.txt"
+        recipe_file = f"user_files/{current_user}-recipes.txt"
         
         
         recipe_arr= []
@@ -281,7 +281,7 @@ def create_homepage(current_user):
         favorites = {}
 
         
-        recipe_file = f"{current_user}-favorites.txt"
+        recipe_file = f"user_files/{current_user}-favorites.txt"
         
         
         recipe_arr= []
@@ -572,7 +572,7 @@ def create_homepage(current_user):
     # Submit an Entry Log Command
     def save_entry_log():
         
-        log_file = f"{current_user}-log.txt"
+        log_file = f"user_files/{current_user}-log.txt"
     
         
             
@@ -596,7 +596,7 @@ def create_homepage(current_user):
         filewin.title("All Logs")
         
         
-        log_file = f"{current_user}-log.txt"
+        log_file = f"user_files/{current_user}-log.txt"
         with open(log_file) as f:
             lines = [line.rstrip('\n') for line in f]
             big_entry_array = []
@@ -658,7 +658,7 @@ def create_homepage(current_user):
     root.title('Get In-Saiyan-ly Fit!')
     root.geometry('800x600')
     
-    img = ImageTk.PhotoImage(Image.open("home.jpg"))  
+    img = ImageTk.PhotoImage(Image.open("images/home.jpg"))  
     l=tk.Label(image=img)
     l.place(x=0,y=0)
 

@@ -1,4 +1,0 @@
-Calorie Goal: 2000
-Carbohydrate Goal: 250
-Fats Goal: 100
-Protein Goal: 200
