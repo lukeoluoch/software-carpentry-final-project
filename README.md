@@ -16,7 +16,7 @@ The Daily Food Diary Tracker allows users to track their daily food intake, incl
 
 
 ## Usage
-The file to run is labeled main.py
+The file to run is labeled main.py.
 
 
 ## Credits
